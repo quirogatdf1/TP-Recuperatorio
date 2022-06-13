@@ -5,6 +5,7 @@ function comprarProductos(cantidad: number) {
   let subtotal: number[] = new Array(cantidad);
   let total: number = 0;
 
+  console.log(`Nombre del Producto | Precio U. | Cantidad | Subtotal`);
   for (let i = 0; i < cantidad; i++) {
     nombreDelProducto[i] = prompt("Ingrese el nombre del producto");
     precioUnitarioDelProducto[i] = Number(
@@ -14,13 +15,13 @@ function comprarProductos(cantidad: number) {
       prompt("Ingrese la cantidad de productos a llevar")
     );
     subtotal[i] = precioUnitarioDelProducto[i] * cantidadProductoComprados[i];
-    console.log(`Nombre del Producto | Precio U. | Cantidad | Subtotal`);
+
     console.log(
-      `${nombreDelProducto[i]} | ${precioUnitarioDelProducto[i]} | ${cantidadProductoComprados[i]} | ${subtotal[i]}`
+      `${nombreDelProducto[i]} | $${precioUnitarioDelProducto[i]} | ${cantidadProductoComprados[i]} | $${subtotal[i]}`
     );
     total += subtotal[i];
-    console.log(`Total a abonar: $${total}`)
   }
+  console.log(`Total a abonar: $${total}`);
   return total;
 }
 
@@ -33,16 +34,16 @@ function partciparSorteo(total: number) {
       break;
     }
     case total >= 1000 && total < 2000: {
-      console.log("Felicitaciones, ya está participando por un TV Led");
+      console.log("Felicitaciones, ya estas participando por un TV Led");
       break;
     }
     case total >= 2000 && total < 3000: {
-      console.log("Felicitaciones, ya está participando por una Moto 0Km.");
+      console.log("Felicitaciones, ya estas participando por una Moto 0Km.");
       break;
     }
     case total >= 3000: {
       console.log(
-        "Felicitaciones, ya está participando por una Automóvil 0Km."
+        "Felicitaciones, ya estas participando por una Automóvil 0Km."
       );
       break;
     }
@@ -53,5 +54,4 @@ const cantidadProductoALlevar: number = Number(
   prompt("Ingrese la cantidad de productos a llevar: ")
 );
 
-
-partciparSorteo(comprarProductos(cantidadProductoALlevar););
+partciparSorteo(comprarProductos(cantidadProductoALlevar));
